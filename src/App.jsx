@@ -41,7 +41,7 @@ Happy Birthday ✨
 
 
   return (
-   <div className='text-3xl text-red-500  h-screen'>
+   <div className='text-3xl text-red-500  h-screen '>
 
  <LandingFirst/>
  <div className='h-screen bg-[url(/bggg.png)] bg-cover bg-center overflow-y-scroll '>
