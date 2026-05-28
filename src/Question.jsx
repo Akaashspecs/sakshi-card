@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "./firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
@@ -6,6 +6,25 @@ const Question = () => {
   const [submitted, setSubmitted] = useState(false);
   const [answer, setAnswer] = useState("");
   const [noClicked, setNoClicked] = useState(false);
+
+  useEffect(() => {
+
+  const saveView = async () => {
+    try {
+      await addDoc(collection(db, "page_views"), {
+        message: "Someone has seen this page",
+        timestamp: serverTimestamp(),
+      });
+
+      console.log("Page view saved");
+    } catch (error) {
+      console.error("Error saving page view:", error);
+    }
+  };
+
+  saveView();
+
+}, []);
 
   const handleAnswer = async (response) => {
     try {
