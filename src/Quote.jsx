@@ -1,5 +1,6 @@
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 const Quote = () => {
 
 const quote = `
@@ -66,7 +67,7 @@ Happy Birthday ✨
     char === "—";
 
   return (
-    <span key={index} className='relative z-30'>
+    <span key={index} className='relative font-bold z-30'>
       <motion.span
         variants={{
           hidden: {
@@ -92,6 +93,16 @@ Happy Birthday ✨
   );
 })} <img src='flowerp.png' className='absolute z-20 top-[900px]'/>
       </motion.div>
+      <div className='mt-[150px]'>
+        <div>
+   There's something for you
+        </div>
+        <Link to="/question">
+            Click Here
+        </Link>
+
+
+      </div>
 
  </div>
     )

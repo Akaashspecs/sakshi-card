@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
 import './App.css'
-import LandingFirst from './LandingFirst'
+import MainPage from './MainPage'
+import { Route, Routes } from 'react-router-dom'
+import Question from './Question'
 
-import Quote from './Quote';
 
 
 
@@ -15,11 +16,13 @@ function App() {
 
 
   return (
-   <div className='text-3xl  h-screen '>
 
- <LandingFirst/>
-<Quote/>
-   </div>
+      <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/question" element={<Question />} />
+   
+    </Routes>
+
   )
 }
 
