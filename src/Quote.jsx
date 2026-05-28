@@ -1,26 +1,30 @@
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
+import { GiNestedHearts } from "react-icons/gi";
+
+
+
 const Quote = () => {
 
 const quote = `
 “Some meetings are brief,
 yet they leave behind a feeling that quietly stays.”
 
-We met only once,
+We met only twice,
 and perhaps it was just a passing moment for the world,
 but certain encounters carry a strange elegance —
 gentle, unspoken, and memorable.
 
 There was a calmness in your presence
 and a grace in the way you spoke,
-the kind that lingers in memory
+the kindness that you hold within you,
 long after the moment has passed.
 
-On your birthday,
-I simply wish that life treats you kindly,
+Its your birthday,
+And I simply wish that life treats you kindly,
 that your days are filled with purpose and peace,
-and that happiness finds you effortlessly,
+and the emptiness within you finds its solace,
 wherever you go.
 
 May this new year of your life
@@ -33,19 +37,36 @@ Happy Birthday ✨
 `;
 
     return (
-        <div className='h-screen bg-[url(/bggg.png)]  bg-cover bg-center overflow-y-scroll relative'>
+        <div className='h-full bg-[url(/bggg.png)] bg-repeat-y bg-auto bg-top relative pb-6'>
  <img src='flags.png'/>
- <div className='flex flex-col justify-center items-center gap-4 '>
-  <div className='-rotate-12 curve-down'>
-    Happy
+ <div className='dancing flex flex-col justify-center items-center gap-1 text-[40px] '>
+  <div className='-rotate-10 curve-down  '>
+    Happy     Birthday
   </div>
-  <div className='-rotate-12 curve-up'>
-    Birthday
+<div className='relative flex flex-col items-center mr-11'>
+
+  <div className='-rotate-11 curve-up'>
+    To you
   </div>
+
+  <div className='-rotate-11 curve-up'>
+    Sakshi
+  </div>
+
+  <img
+    src='bear.png'
+    className='absolute bottom-0 w-[100px] h-[160px] ml-[190px] pt-[40px] object-contain -rotate-1'
+  />
+
+</div>
+  
 
   
  </div>
-  <img src='cake.gif' className=' mx-auto h-96'/>
+ <div className='relative'>
+    <img src='cake.gif' className='relative z-20 mx-auto h-96'/>
+      
+ </div>
 
       <motion.div
         initial="hidden"
@@ -67,7 +88,7 @@ Happy Birthday ✨
     char === "—";
 
   return (
-    <span key={index} className='relative font-bold z-30'>
+    <span key={index} className='dancing relative font-bold text-[30px] z-30'>
       <motion.span
         variants={{
           hidden: {
@@ -93,12 +114,12 @@ Happy Birthday ✨
   );
 })} <img src='flowerp.png' className='absolute z-20 top-[900px]'/>
       </motion.div>
-      <div className='mt-[150px]'>
-        <div>
+      <div className='my-[150px] flex justify-center flex-col items-center gap-3  pb-11'>
+        <div className='poppins font-light text-xl'>
    There's something for you
         </div>
-        <Link to="/question">
-            Click Here
+        <Link to="/question" className='border text-xl  bg-red-500 text-white p-2 items-center rounded-xl px-3 flex gap-1'>
+            Click Here <GiNestedHearts  />
         </Link>
 
 

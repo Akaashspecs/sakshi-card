@@ -5,6 +5,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 const Question = () => {
   const [submitted, setSubmitted] = useState(false);
   const [answer, setAnswer] = useState("");
+  const [noClicked, setNoClicked] = useState(false);
 
   const handleAnswer = async (response) => {
     try {
@@ -23,28 +24,46 @@ const Question = () => {
   };
 
   return (
-    <div className="h-screen bg-[url(/bluebg.png)] bg-cover bg-center flex flex-col items-center justify-center gap-8">
+    <div className="h-screen bg-[url(/bluebg.png)] bg-cover bg-center flex flex-col  py-10 px-5 overflow-y-scroll justify-center">
       {!submitted ? (
         <>
-          <h1 className="text-3xl font-bold">साक्षी, do you want to be friends?</h1>
-          <div className="flex gap-6">
+          <h1 className="text-3xl gotu font-bold  ">साक्षी,</h1>
+<div className="flex flex-col gap-3">
+ <div className="flex text-center justify-center w-full text-2xl ">मुझे पाता है, तुम्हे ये पसंद आया होगा✨</div>
+            <div className="flex text-center justify-center w-full text-2xl ">और आगे नहीं भी आया तो प्लीज,   </div>
+               <div className="text-2xl text-center justify-center w-full ">ऑफिस आके थप्पड़ मत मार देना😭</div>
+            <div className="text-3xl text-center justify-center w-full caveat font-semibold ">I just really wanna ask you something,</div>
+            <div className="text-3xl text-center justify-center w-full caveat font-bold ">do you wanna go out with me 👀 ?</div>
+</div>
+         
+          <div className="flex flex-col gap-6">
             <button
               onClick={() => handleAnswer("yes")}
-              className="px-8 py-3 bg-green-500 text-white rounded-xl text-xl font-semibold hover:bg-green-600 transition"
+              className="poppins px-8 py-3 bg-green-500 text-white rounded-xl text-xl font-semibold hover:bg-green-600 transition mt-10 shadow-2xl"
             >
-              Yes ✅
+              Maan bhi jaa ab 🙇🏻
             </button>
-            <button
-              onClick={() => handleAnswer("no")}
-              className="px-8 py-3 bg-red-500 text-white rounded-xl text-xl font-semibold hover:bg-red-600 transition"
-            >
-              No ❌
-            </button>
+          <button
+  onClick={() => {
+    setNoClicked(true);
+  }}
+  disabled={noClicked}
+  className={`poppins px-8 py-3 text-white rounded-xl text-xl font-semibold transition shadow-2xl
+  ${
+    noClicked
+      ? "bg-gray-500 cursor-not-allowed"
+      : "bg-red-500 hover:bg-red-600"
+  }`}
+>
+  {noClicked
+    ? "Itna bhi bura nahi hoon yaar, is button ne kaam krna band kr diya😡"
+    : "Mei tab bhi manana nahi chodunga❌🙇🏻"}
+</button>
           </div>
         </>
       ) : (
-        <h1 className="text-3xl font-bold">
-          {answer === "yes" ? "Yay! 🎉" : "Maybe next time 😊"}
+        <h1 className="dancing text-center text-3xl font-bold  w-full flex items-center justify-center h-full">
+          {answer === "yes" ? "Adiós, I will wait for your call ❣️😉..." : "Maybe next time 😊"}
         </h1>
       )}
     </div>

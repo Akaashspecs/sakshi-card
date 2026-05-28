@@ -115,7 +115,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-dvh flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative w-full h-lvh flex flex-col items-center justify-center overflow-hidden bg-white"
     >
       {/* Loading Screen */}
       {isLoading && (
@@ -164,12 +164,16 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
                  filter="url(#textShadow)"
                >
                  <textPath href="#curve1" startOffset="50%">
-                    <tspan>Hey!</tspan>
-                   
+                    <tspan className='dancing'>Hey!</tspan>
+                    
                  </textPath>
+                 
                </text>
              </svg>
         </motion.div>
+        
+        
+
 
         {/* Center Logo/Icon */}
         <motion.div 
