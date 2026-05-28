@@ -115,7 +115,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-svh flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative w-full h-dvh flex flex-col items-center justify-center overflow-hidden bg-white"
     >
       {/* Loading Screen */}
       {isLoading && (
