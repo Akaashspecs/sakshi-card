@@ -46,13 +46,13 @@ const Question = () => {
     <div className="h-screen bg-[url(/bluebg.png)] bg-cover bg-center flex flex-col  py-10 px-5 overflow-y-scroll justify-center">
       {!submitted ? (
         <>
-          <h1 className="text-3xl gotu font-bold  ">साक्षी,</h1>
+          <h1 className="text-3xl amita font-bold  ">साक्षी,</h1>
 <div className="flex flex-col gap-3">
- <div className="flex text-center justify-center w-full text-2xl ">मुझे पाता है, तुम्हे ये पसंद आया होगा✨</div>
-            <div className="flex text-center justify-center w-full text-2xl ">और आगे नहीं भी आया तो प्लीज,   </div>
-               <div className="text-2xl text-center justify-center w-full ">ऑफिस आके थप्पड़ मत मार देना😭</div>
-            <div className="text-3xl text-center justify-center w-full caveat font-semibold ">I just really wanna ask you something,</div>
-            <div className="text-3xl text-center justify-center w-full caveat font-bold ">do you wanna go out with me 👀 ?</div>
+ <div className="flex amita text-center justify-center w-full text-2xl ">मुझे पता है, तुम्हे ये पसंद आया होगा✨</div>
+            <div className="amita flex text-center justify-center w-full text-2xl ">और आगे नहीं भी आया तो प्लीज,   </div>
+               <div className=" amita text-2xl text-center justify-center w-full ">ऑफिस आके थप्पड़ मत मार देना😭</div>
+            <div className="amita text-3xl text-center justify-center w-full caveat font-semibold ">I just really wanna ask you something,</div>
+            <div className="amita text-3xl text-center justify-center w-full caveat font-bold ">do you wanna go out with me 👀 ?</div>
 </div>
          
           <div className="flex flex-col gap-6">
@@ -82,7 +82,7 @@ const Question = () => {
         </>
       ) : (
         <h1 className="dancing text-center text-3xl font-bold  w-full flex items-center justify-center h-full">
-          {answer === "yes" ? "Adiós, I will wait for your call ❣️😉..." : "Maybe next time 😊"}
+          {answer === "yes" ? "Escutar, I will wait for your call ❣️😉..." : "Maybe next time 😊"}
         </h1>
       )}
     </div>
